@@ -1,0 +1,440 @@
+.form__fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding: 0 20px 25px;
+    border-bottom: 1px solid #d6d6d6;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+.form__topic {
+    margin-bottom: 25px;
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: bold;
+    text-align: center;
+}
+.form__person-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+.form__person-input::placeholder,
+.form__contacts-input::placeholder {
+    color: @dark-color-text;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.form__person-input,
+.form__contacts-input  {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    background-color: @color-form;
+    font: inherit;
+    border: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #000;
+    outline: none;
+
+    &:hover {
+        background-color: @btn-disabled;
+    }
+    &:focus {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 4px @btn-disabled;
+    }
+}
+.form__contacts-input {
+    position: relative;
+    margin-left: 0;
+    border-right: 58px solid @color-form-decor;
+}
+.form__contacts-logo {
+    display: block;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        top: 0;
+        width: 58px;
+        background: url("../img/icons/icon-phone.svg") no-repeat 50% 50%;
+        z-index: 1;
+    }
+
+    &--email::before {
+        background-image: url("../img/icons/icon-mail.svg");
+    }
+}
+.form__contacts-label {
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.form__contacts-wrap {
+    position: relative;
+    margin-bottom: 15px;
+}
+.form__impression-wrap,
+.form__places {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+.form__impression-wrapper,
+.form__places-wrap {
+    margin-bottom: 10px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    text-transform: none;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+.form__impression-wrapper label {
+    position: relative;
+    padding-left: 70px;
+    cursor: pointer;
+
+    &:hover .checkbox-indicator {
+        border-color: @btn-disabled;
+        background-color: @btn-disabled;
+    }
+    &:active .checkbox-indicator {
+        border-color: @theme-decor;
+        background-color: @theme-decor;
+    }
+}
+input[type="radio"] + .checkbox-indicator {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 0;
+    top: -17px;
+    border: 17px solid @color-form;
+    border-radius: 50%;
+    background-color: @color-form;
+}
+input[type="radio"]:checked + .checkbox-indicator {
+    background-color: @color-form-input;
+}
+input[type="radio"]:checked:active + .checkbox-indicator {
+    background-color: hsla(0, 0%, 20%, 0.568);
+}
+.form__emotions-text {
+    width: 100%;
+    min-height: 160px;
+    margin: 0 auto;
+    padding: 15px 25px;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #000;
+    background-color: @color-form;
+    border: none;
+
+    &::-webkit-input-placeholder {
+        color: #000;
+    }
+    &::-ms-input-placeholder {
+        color: #000;
+    }
+}
+.form__btn {
+    display: block;
+    margin: 0 auto;
+
+    &--range {
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        margin: 0 auto;
+        border-radius: 2px;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+}
+.form__places-wrap label {
+    position: relative;
+    padding-left: 70px;
+    cursor: pointer;
+
+    &:hover .checkbox-indicator {
+        background-color: @btn-disabled;
+    }
+    &:active .checkbox-indicator {
+        background-color: @theme-decor;
+    }
+
+}
+input[type="checkbox"] + .checkbox-indicator {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    left: 0;
+    top: -17px;
+    border-radius: 5px;
+    background-color: @color-form;
+}
+input[type="checkbox"] + .checkbox-indicator--middle {
+    width: 46px;
+    height: 46px;
+}
+input[type="checkbox"]:checked + .checkbox-indicator::before {
+    position: absolute;
+    content: "";
+    top: 13px;
+    left: 15px;
+    width: 18px;
+    height: 10px;
+    border: 5px solid @color-form-input;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    clip: rect(8px, 22px, auto, auto);
+    transform: rotate(-50deg);
+}
+input[type="checkbox"]:checked + .checkbox-indicator--middle::before {
+    top: 8px;
+    left: 10px;
+}
+input[type="checkbox"]:focus + .checkbox-indicator,
+input[type="radio"]:focus + .checkbox-indicator {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+input[type="checkbox"]:checked:active + .checkbox-indicator::before {
+    opacity: 0.5;
+}
+.form__note {
+    display: none;
+}
+@media(min-width:@tablet-width) {
+    .form__fieldset {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .form__topic {
+        margin-bottom: 60px;
+        font-size: 21px;
+        line-height: 1.2;
+    }
+    .form__person,
+    .form__impression-wrap {
+        width: 50%;
+        margin-bottom: 58px;
+        box-sizing: border-box;
+        border-bottom: none;
+    }
+    .form__person {
+        padding-left: 57px;
+        border-left: 1px solid #d6d6d6;
+    }
+    .reviews__form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .form__person {
+        order: -1;
+        margin-bottom: 58px;
+        padding-bottom: 0;
+    }
+    .form__impression-wrap {
+        order: -2;
+    }
+    .form__contacts,
+    .form__places,
+    .form__emotions {
+        width: 100%;
+        border-top: 1px solid #d6d6d6;
+        border-bottom: none;
+    }
+    .form__topic--impression,
+    .form__topic--person {
+        text-align: left;
+    }
+    .form__topic--title {
+        max-width: 290px;
+        padding-top: 0;
+        padding-left: 56px;
+        padding-right: 56px;
+        margin-bottom: 30px;
+        box-sizing: content-box;
+    }
+    .form__contacts-wrap {
+        margin-bottom: 25px;
+    }
+    .form__emotions-text {
+        margin-top: 30px;
+        margin-bottom: 37px;
+    }
+    .form__places-wrap {
+        width: 230px;
+        margin-top: 20px;
+
+        &:nth-child(3) {
+            order: -1;
+        }
+        &:nth-child(1) {
+            order: -2;
+        }
+    }
+    .form__btn {
+        width: 324px;
+        margin: 0;
+    }
+
+    .form__places-column {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 95px;
+        padding-right: 63px;
+    }
+    .form__places {
+        padding-bottom: 58px;
+    }
+    .form__note {
+        align-self: center;
+        font-weight: normal;
+    }
+    .form__note {
+        display: block;
+    }
+    .form--hotels {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .form--hotels .form__fieldset {
+        max-width: 175px;
+        color: @color-form;
+    }
+    .form--hotels .form__contacts,
+    .form--hotels .form__places,
+    .form--hotels .form__emotions {
+        border-top: none;
+        padding-bottom: 30px;
+    }
+    .form--hotels .form__topic {
+        font-size: 16px;
+        line-height: 1.3;
+        margin-bottom: 0;
+    }
+    .form--hotels .form__places-column {
+        padding: 0;
+    }
+    .form--hotels .form__places-wrap {
+        max-width: 178px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-top: 5px;
+        order: 0;
+    }
+    .form--hotels input[type=checkbox]+.checkbox-indicator {
+        width: 24px;
+        height: 24px;
+        top: auto;
+        border: 2px solid @color-form-decor;
+        background-color: transparent;
+    }
+    .form--hotels input[type=checkbox]:checked+.checkbox-indicator--middle::before {
+        top: -8px;
+        left: 0px;
+        border-color: @color-form-decor;
+        background-color: transparent;
+    }
+    .form--hotels input[type="checkbox"]:focus + .checkbox-indicator,
+    .form--hotels input[type="radio"]:focus + .checkbox-indicator {
+        outline: transparent;
+        border: 2px solid @main-color;
+    }
+    .form--hotels label {
+        padding-left: 50px;
+        font-size: 14px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+    .form--hotels .form__topic--title {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+    }
+    .form--hotels .btn {
+        font-weight: normal;
+        border: 2px solid #d6d6d6;
+        background-color: transparent;
+
+        &:hover {
+            background-color: @color-form;
+            color: @dark-color-text;
+        }
+        &:focus {
+            border: 2px solid @main-color;
+            outline: none;
+        }
+    }
+}
+@media(min-width:@desktop-width) {
+    .form__person,
+    .form__impression-wrap {
+        margin-bottom: 45px;
+    }
+    .form__contacts-column {
+        display: flex;
+        justify-content: space-between;
+    }
+    .form__contacts-label--hide {
+        display: none;
+    }
+    .form__contacts-label {
+        float: left;
+        max-width: 165px;
+        padding-top: 15px;
+        padding-left: 0;
+
+        margin-right: 10px;
+        text-align: left;
+    }
+    .form__contacts-logo {
+        float: right;
+        width: 318px;
+    }
+    .form__places-column {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .form__btn {
+        width: 480px;
+    }
+    .form--hotels {
+        justify-content: start;
+    }
+    .form__fieldset--right-zone {
+        margin-left: auto;
+    }
+    .form__places--left {
+        margin-right: 110px;
+    }
+    .form--hotels  .form__fieldset--range {
+        max-width: auto;
+        width: 320px;
+    }
+}

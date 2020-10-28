@@ -1,0 +1,67 @@
+.range-filter {
+    width: 222px;
+    margin: 0 auto;
+    margin-bottom: 11px;
+
+    & input {
+        font: inherit;
+        width: 70px;
+        box-sizing: border-box;
+        border: none;
+        background-color: transparent;
+    }
+}
+.range-filter__price-controls {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+    border: 2px solid @theme-decor;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: @color-form-decor;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: 80%;
+        transform: translate(-50%, -50%);
+        background-color: @theme-decor;
+    }
+}
+
+.range__label{
+    padding-left: 10px;
+}
+@media(min-width:@tablet-width) {
+    .range-filter--hotels .range-filter__price-controls {
+        margin-top: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 220px;
+        background-color: transparent;
+    }
+    .range-filter--hotels .range__label {
+        font-weight: normal;
+    }
+
+    .range-filter--hotels .range__label-wrap {
+        padding-left: 0;
+    }
+    .range-filter--hotels input {
+        color: @color-form;
+    }
+}
+@media(min-width:@desktop-width) {
+    .range-filter--hotels .range-filter__price-controls {
+        width: 320px;
+    }
+    .range-filter {
+        max-width: auto;
+        width: 320px;
+    }
+}

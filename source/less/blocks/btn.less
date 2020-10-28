@@ -1,0 +1,32 @@
+.btn {
+    display: inline-block;
+    padding: 17px 40px;
+    box-sizing: border-box;
+    border: none;
+    font: inherit;
+    font-size: 21px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+    color: @main-color-link;
+    vertical-align: middle;
+    text-transform: uppercase;
+    background: @main-color;
+    cursor: pointer;
+    transition: background-color 0.1s linear, color 0.1s linear;
+}
+.btn:hover,
+.btn:focus {
+    background: darken(@main-color, 5%);
+}
+.btn:active {
+    background: darken(@main-color, 10%);
+    color: rgba(255, 255, 255, 0.3);
+}
+.btn.disabled,
+.btn:disabled {
+    cursor: default;
+    pointer-events: none;
+    background: @btn-disabled;
+    color: rgba(255, 255, 255, 0.8);
+}

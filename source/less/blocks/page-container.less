@@ -1,0 +1,23 @@
+.page-container {
+    width: 60%;
+    min-width: 320px;
+    margin: 0 auto;
+
+    &--main {
+        box-shadow: 0 0 15px rgba(0, 1, 1, 0.2);
+    }
+
+}
+@media(min-width: @tablet-width) {
+    .page-container {
+        width: auto;
+        max-width: 768px;
+        margin: 0 auto;
+        background-color: @bg-light;
+    }
+}
+@media(min-width: @desktop-width) {
+    .page-container {
+        max-width: 1200px;
+    }
+}
