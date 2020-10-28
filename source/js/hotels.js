@@ -15,6 +15,7 @@ window.addEventListener('load', function () {
     //Сортировка по возрастанию
     let sort = (dataType) => {
       let resultsList = document.querySelector(".results__list");
+      let replacedNode;
       for (let i = 0; i < resultsList.children.length; i++) {
         for (let k = i; k < resultsList.children.length; k++) {
           if (+resultsList.children[k].getAttribute(dataType) <
@@ -29,6 +30,7 @@ window.addEventListener('load', function () {
     //Сортировка по убыванию
     let sortDsc = (dataType) => {
       let resultsList = document.querySelector(".results__list");
+      let replacedNode;
       for (let i = 0; i < resultsList.children.length; i++) {
         for (let k = i; k < resultsList.children.length; k++) {
           if (+resultsList.children[k].getAttribute(dataType) >
